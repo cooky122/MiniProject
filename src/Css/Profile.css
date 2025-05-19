@@ -1,0 +1,42 @@
+.proflieContainer{
+    max-width: 200px;
+    border: 1px solid #7c7c7c;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.tabBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.tabBtn button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tabContent h3 {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+hr {
+    margin: 0px;
+}
+
+.profile > p,h3{
+    margin-left: 5px;
+}
+
+.grade{
+    margin-left: 20px;
+    background-color: beige;
+    color: #7c7c7c;
+}

@@ -1,10 +1,9 @@
 import './App.css'
+import ProfileBox from './Component/ProfileBox'
 
 function App() {
   return (
-    <div className='App'>
-      <h1>test</h1>
-    </div>
+    <ProfileBox/>
   )
 }
 
