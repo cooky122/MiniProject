@@ -1,9 +1,17 @@
 import './App.css'
-import ProfileBox from './Component/ProfileBox/ProfileBox'
+import Header from './components/Header';
+import Aside from './components/Aside';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <ProfileBox/>
+    <div className='App'>
+      <Header />
+      <Aside />
+      <Main />
+      <Footer />
+    </div>
   )
 }
 
