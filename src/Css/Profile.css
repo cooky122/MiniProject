@@ -1,0 +1,47 @@
+.proflieContainer{
+    max-width: 200px;
+    border-top: 2px solid #7c7c7c;
+}
+
+.tabBtn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tabBtn button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tabContent h3 {
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.profileHeader{
+    display: flex;
+    align-items: center;
+}
+
+.defaultImg{
+    width: 64px;
+    height: 64px;
+}
+
+.profileText{
+    margin-left: 10px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.grade{
+    background-color: beige;
+    color: #7c7c7c;
+}

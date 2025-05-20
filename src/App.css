@@ -1,4 +1,36 @@
+html, body, ol, ul, li, div, span, header, footer, section,
+article, h1, h2, h3, h4, h5, h6, p, a, img, hr, input, form,
+button, table, tr, td, th, tbody, br{
+	margin: 0px;
+	padding : 0px;
+} 
+
 body{
-  margin: 0px;
-  padding: 0px;
+	width: 1920px;
+	margin:0 auto;
+}
+ul, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color : black;
+}
+
+a:visited {
+	text-decoration: none;
+	color : black;
+}
+
+img {
+	border : none;
+}
+
+table, tr, th, td{
+	border : 1px solid black;
+	border-collapse: collapse;
+}
+
+th,td{
+	width : 100px;
 }
