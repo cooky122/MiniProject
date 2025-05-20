@@ -1,8 +1,9 @@
+import ProfileBox from "./ProfileBox/ProfileBox.jsx"
 const Aside = ()=>{
   return (
     <>
       <div className="profile">
-        <h2>profile 부분</h2>
+        <ProfileBox/>
       </div>
       <div className="boardList">
         <h2>boardList 부분</h2>
