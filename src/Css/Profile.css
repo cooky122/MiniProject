@@ -1,16 +1,12 @@
 .proflieContainer{
     max-width: 200px;
-    border: 1px solid #7c7c7c;
-    border-radius: 5px;
-    margin: 0;
+    border-top: 2px solid #7c7c7c;
 }
 
 .tabBtn {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 0;
-    padding: 0;
 }
 
 .tabBtn button {
@@ -24,19 +20,28 @@
 
 .tabContent h3 {
   margin-top: 10px;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
-hr {
-    margin: 0px;
+.profileHeader{
+    display: flex;
+    align-items: center;
 }
 
-.profile > p,h3{
-    margin-left: 5px;
+.defaultImg{
+    width: 64px;
+    height: 64px;
+}
+
+.profileText{
+    margin-left: 10px;
+}
+
+.name{
+    font-weight: bold;
 }
 
 .grade{
-    margin-left: 20px;
     background-color: beige;
     color: #7c7c7c;
 }

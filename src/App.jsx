@@ -1,5 +1,5 @@
 import './App.css'
-import ProfileBox from './Component/ProfileBox'
+import ProfileBox from './Component/ProfileBox/ProfileBox'
 
 function App() {
   return (
