@@ -1,14 +1,16 @@
 import ProfileBox from "./ProfileBox/ProfileBox.jsx"
+import BoardList from "./ListBox/boardList.jsx";
+
 const Aside = ()=>{
   return (
-    <>
+    <div className="aside">
       <div className="profile">
         <ProfileBox/>
       </div>
       <div className="boardList">
-        <h2>boardList 부분</h2>
+        <BoardList />
       </div>
-    </>
+    </div>
   );
 }
 export default Aside;
