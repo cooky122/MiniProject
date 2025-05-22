@@ -1,7 +1,14 @@
-const ContentView = () =>{
+
+const ContentView = ({posts}) =>{
+
   return(
     <div>
-
+      {posts.filter((post) => post.post_id === 2)
+      .map((post)=>(
+        <div key={post.post_id}>
+          <div>내용: {post.content}</div>
+        </div>
+      ))}
     </div>
   );
 }
