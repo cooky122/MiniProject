@@ -1,6 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import PostView from "./PostView/PostView"
-
+import PostListView from './postListView/PostListView';
 
 const Linked = () =>{
   return(
@@ -13,7 +13,7 @@ const Linked = () =>{
       <hr />
       <div className="Routes">
         <Routes>
-          <Route path='/'></Route>
+          <Route path='/' element={<PostListView/>}></Route>
           <Route path='/postview' element={<PostView/>}></Route>
           <Route path='/post'></Route>
         </Routes>
