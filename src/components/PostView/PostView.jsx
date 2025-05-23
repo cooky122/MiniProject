@@ -6,6 +6,7 @@ import PostFooter from "./PostFooter";
 import DateFormat from "../DateFormat";
 import '../../Css/minProfile.css';
 import '../../Css/PostView.css'
+import '../../Css/Comment/Comment.css'
 import { useRef, useState } from "react";
 
 
@@ -30,12 +31,13 @@ const PostView = ({Posts, Comments}) =>{
 
   return(
     <div>
-      <div className="contentWrapper">
+      <div className="postWrapper">
         <TitleView posts={Posts} />
+        <hr />
         <ContentView posts={Posts}/>
       </div>
       <div className="commentWrapper">
-        <CommentView comments={Comments}/>
+        <CommentView comments={Comments} posts={Posts}/>
         <CreateComment onCreate={onCreate}/>
       </div>
       <PostFooter/>

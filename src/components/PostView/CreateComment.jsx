@@ -27,9 +27,9 @@ const CreateComment = ({onCreate}) =>{
 
   return(
     <div>
-      <div>
-        <input ref={inputRef} value={com} onChange={onCreateComment} onKeyDown={onKeyDown} />
-        <button onClick={onSubmit}>등록</button>
+      <div className="createCommentBox">
+        <input ref={inputRef} value={com} onChange={onCreateComment} onKeyDown={onKeyDown} className="createComment" />
+        <button onClick={onSubmit} className="submitBtn">등록</button>
       </div>
     </div>
   );
