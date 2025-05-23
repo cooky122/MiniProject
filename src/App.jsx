@@ -26,8 +26,10 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Aside />
-      <Main />
+      <div className="wrap">
+        <Aside />
+        <Main />
+      </div>
       <Footer />
       <Linked Posts={Posts} Comments = {Comments}/>
     </div>
