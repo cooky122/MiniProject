@@ -1,4 +1,17 @@
+.minProfile{
+  display: flex;
+  gap: 10px;
+  padding-left: 2em;
+  background-color: beige;
+}
+.ViewCopy{
+  margin-left: auto;
+  padding-top: 32px;
+  background-color: blueviolet;
+}
 .minImg{
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
+  padding-top: 1em;
+  padding-left: 1em;
 }
