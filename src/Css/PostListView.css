@@ -18,7 +18,7 @@ h2{
 	padding-left: 20px;
 }
 
-#postList{
+#list {
 	max-width: 800px;
 	margin-left: 20px;
 	margin-bottom: 20px;
@@ -26,7 +26,7 @@ h2{
 	border: none;
 }
 
-#postList > td, th{
+#list > td, th{
 	border: none;
 }
 

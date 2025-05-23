@@ -9,17 +9,18 @@ import '../../Css/PostListView.css'
 const PostListView = ()=>{
   return (
   <div className="wrapPostView">
-      <div className="postList">
-          <h2>게시판 타이틀</h2>
-          <div className="headerWrap">
-            <h4>게시글 수</h4>
-            <select name="pageNum">
-              <option value="5">5개씩</option> 
-              <option value="10">10개씩</option> 
-              <option value="20">20개씩</option> 
-            </select>
-          </div>
-        <table id="postList">
+    <div className="postList">
+      <h2>게시판 타이틀</h2>
+      <div className="headerWrap">
+        <h4>게시글 수</h4>
+        <select name="pageNum">
+          <option value="5">5개씩</option> 
+          <option value="10">10개씩</option> 
+          <option value="20">20개씩</option> 
+        </select>
+      </div>
+      {/* <span id="list"> */}
+        <table id="list">
           <tr>
             <td></td>
             <td></td>
@@ -37,26 +38,27 @@ const PostListView = ()=>{
             <td>게시물 조회수</td>
           </tr>
         </table>
-      </div>
-      <div className="searchBar">
-        <div className="wrapInput">
-          <form>
-            <select name="duration">
-              <option value="day">1일</option>
-              <option value="week">1주</option>
-              <option value="month">1달</option>
-            </select>
-            <select name="searchType">
-              <option value="title">제목</option>
-              <option value="content">내용</option>
-              <option value="writer">글작성자</option>
-            </select>
-            <input type="text" name="keyword"></input>
-            <input type="submit" value="검색"></input>
-          </form>
-        </div>
+      {/* </span> */}
+    </div>
+    <div className="searchBar">
+      <div className="wrapInput">
+        <form>
+          <select name="duration">
+            <option value="day">1일</option>
+            <option value="week">1주</option>
+            <option value="month">1달</option>
+          </select>
+          <select name="searchType">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="writer">글작성자</option>
+          </select>
+          <input type="text" name="keyword"></input>
+          <input type="submit" value="검색"></input>
+        </form>
       </div>
     </div>
+  </div>
   );
 }
 export default PostListView;
