@@ -2,16 +2,15 @@
   width: 1600px;
 }
 .createComment{
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
-  border-right:  1px solid black;
-  border-bottom: 1px solid black;
+  margin-left: 4em;
+  border-radius: 5px;
   width: 80%;
   min-height: 4em;
 }
 .comment{
-  border: 1px solid black;
-  border-radius: 5px;
+  margin-left: 2em;
   min-height: 7em;
 }
 .submitBtn{

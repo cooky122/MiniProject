@@ -3,7 +3,6 @@ import TitleView from "./TitleView";
 import CommentView from "./CommentView";
 import CreateComment from "./CreateComment";
 import PostFooter from "./PostFooter";
-import DateFormat from "../DateFormat";
 import '../../Css/minProfile.css';
 import '../../Css/PostView.css'
 import '../../Css/Comment/Comment.css'
@@ -22,7 +21,7 @@ const PostView = ({Posts, Comments}) =>{
       post_id:2,
       mem_id:"user05",
       content:com,
-      create_time: <DateFormat/>
+      create_time: new Date()
     };
 
     setCom([newCom,...comment])
@@ -37,7 +36,7 @@ const PostView = ({Posts, Comments}) =>{
         <ContentView posts={Posts}/>
       </div>
       <div className="commentWrapper">
-        <CommentView comments={Comments} posts={Posts}/>
+        <CommentView comments={comment} posts={Posts}/>
         <CreateComment onCreate={onCreate}/>
       </div>
       <PostFooter/>
