@@ -1,0 +1,23 @@
+.contentWrapper{
+  margin-left: 8em;
+}
+.commentWrapper{
+  margin-left: 8em;
+}
+.postTitle{
+  background-color: azure;
+  padding-left: 2em;
+}
+.boardBtn{
+  background-color: azure;
+  color: rgb(0, 180, 0);
+  border: none;
+}
+.boardBtn:hover{
+  cursor: pointer;
+}
+.contentView{
+  width: 100%;
+  min-height: 15em;
+  background-color: #7c7c7c;
+}

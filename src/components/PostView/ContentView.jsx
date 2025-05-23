@@ -2,7 +2,7 @@
 const ContentView = ({posts}) =>{
 
   return(
-    <div>
+    <div className="contentView">
       {posts.filter((post) => post.post_id === 2)
       .map((post)=>(
         <div key={post.post_id}>
