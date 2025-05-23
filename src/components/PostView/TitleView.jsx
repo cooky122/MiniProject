@@ -13,8 +13,8 @@ const TitleView = ({posts}) =>{
             <div className='minProfile'>
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
               <span className='profileText'>
-                <p>{post.mem_id}</p>
-                <p>{post.create_time} 조회 {post.view_count}</p>
+                <p className='userID'>{post.mem_id}</p>
+                <p className='Date'>{post.create_time} 조회 {post.view_count}</p>
               </span>
               <div className='ViewCopy'>
                 <button type='button'>📑댓글 1</button>
