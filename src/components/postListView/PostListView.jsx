@@ -6,7 +6,7 @@
 //   {post_id:5, board_id:2, mem_id:"user05", post_title:"이벤트 참여해요", content:"참여 완료했습니다~", create_time:<DateFormat/>, view_count:30, like_count:3, post_type:0},
 // ];
 import '../../Css/PostListView.css'
-const PostListView = ()=>{
+const PostListView = ({Posts})=>{
   return (
   <div className="wrapPostView">
     <div className="postList">
@@ -19,26 +19,26 @@ const PostListView = ()=>{
           <option value="20">20개씩</option> 
         </select>
       </div>
-      {/* <span id="list"> */}
-        <table id="list">
-          <tr>
-            <td></td>
-            <td></td>
-            <td>제목</td>
-            <td>작성자</td>
-            <td>작성일</td>
-            <td>조회수</td>
-          </tr>
-          <tr>
+      <table id="list">
+        <tr>
+          <th></th>
+          <th></th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회수</th>
+        </tr>
+        {Posts.map((post)=>(
+          <tr key={post.post_id}>
             <td><input type="checkbox"></input></td>
-            <td>게시판 이름</td>
-            <td>게시물 제목</td>
-            <td>게시물 작성자</td>
-            <td>게시물 작성일</td>
-            <td>게시물 조회수</td>
+            <td>{post.board_id === 1 ? "공지사항" : "자유게시판"}</td>
+            <td>{post.post_title}</td>
+            <td>{post.mem_id}</td>
+            <td>{post.create_time}</td>
+            <td>{post.view_count}</td>
           </tr>
-        </table>
-      {/* </span> */}
+        ))}
+      </table>
     </div>
     <div className="searchBar">
       <div className="wrapInput">

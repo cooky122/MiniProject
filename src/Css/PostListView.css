@@ -19,11 +19,12 @@ h2{
 }
 
 #list {
-	max-width: 800px;
+	width: 800px;
 	margin-left: 20px;
 	margin-bottom: 20px;
 
 	border: none;
+	text-align: center;
 }
 
 #list > td, th{

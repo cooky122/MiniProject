@@ -14,7 +14,7 @@ const Linked = ({Posts,Comments}) =>{
       <hr />
       <div className="Routes">
         <Routes>
-          <Route path='/' element={<PostListView/>}></Route>=======
+          <Route path='/' element={<PostListView Posts={Posts}/>}></Route>
           <Route path='/postview' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
           <Route path='/post' element={<creatPost/>}></Route>
         </Routes>
