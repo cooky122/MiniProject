@@ -1,8 +1,9 @@
 import defaultImg from '../../assets/tmp.png'
+import DateFormat from '../DateFormat';
 
 const TitleView = ({posts}) =>{
   return(
-    <div className="postView">
+    <div className='titleView'>
         {posts.filter((post)=> post.post_id === 2)
         .map((post)=>(
           <div key={post.post_id} {...post}>
@@ -14,7 +15,7 @@ const TitleView = ({posts}) =>{
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
               <span className='profileText'>
                 <p className='userID'>{post.mem_id}</p>
-                <p className='Date'>{post.create_time} 조회 {post.view_count}</p>
+                <p className='Date'><DateFormat date={post.create_time}/> 조회 {post.view_count}</p>
               </span>
               <div className='ViewCopy'>
                 <button type='button'>📑댓글 1</button>
