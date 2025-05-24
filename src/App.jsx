@@ -1,10 +1,14 @@
 import './App.css'
 import Header from './components/Header';
 import Aside from './components/Aside';
-import Main from './components/Main';
+//import Main from './components/Main';
+import PostListAll from './components/postListView/PostListAll';
+import EachBoardList from './components/postListView/EachBoardList';
+import PostView from './components/PostView/PostView';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
 import DateFormat from './components/DateFormat';
+import { Route, Routes } from 'react-router-dom';
 
 const Boards = [
   {board_id: 1, mem_id: "user01", board_title: "공지사항", board_createdate: "2025-01-02 10:30:00" },
@@ -33,7 +37,14 @@ function App() {
       <Header />
       <div className="wrap">
         <Aside />
-        <Main />
+        <div className='main'>
+          <Routes>
+            <Route path='/' element={<PostListAll Posts={Posts}/>}></Route>
+            <Route path='/1' element={<EachBoardList Posts={Posts}/>}></Route>
+            <Route path='/2' element={<EachBoardList Posts={Posts}/>}></Route>
+            <Route path='/postview' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
+          </Routes>
+        </div>
       </div>
       <Footer />
       <Linked Posts={Posts} Comments = {Comments}/>

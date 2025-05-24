@@ -29,6 +29,7 @@ h2{
 
 #list > td, th{
 	border: none;
+	padding-bottom: 10px;
 }
 
 .searchBar{
