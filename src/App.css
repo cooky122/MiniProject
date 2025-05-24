@@ -48,3 +48,9 @@ th,td{
 	justify-content: center;
 	gap: 30px;
 }
+
+.main{
+	width: 800px;
+	height: 600px;
+	border: 1px solid #7c7c7c;
+}
