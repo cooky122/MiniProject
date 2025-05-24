@@ -1,8 +1,10 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import PostView from "./PostView/PostView"
+import PostListView from './postListView/EachBoardList';
 
 
 const Linked = ({Posts,Comments}) =>{
+
   return(
     <div>
       <div className="Linked">
@@ -13,9 +15,9 @@ const Linked = ({Posts,Comments}) =>{
       <hr />
       <div className="Routes">
         <Routes>
-          <Route path='/'></Route>
-          <Route path='/postview' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
-          <Route path='/post'></Route>
+          <Route path='/' element={<PostListView Posts={Posts}/>}></Route>
+          <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments} />}></Route>
+          <Route path='/post' element={<creatPost/>}></Route>
         </Routes>
       </div>
     </div>

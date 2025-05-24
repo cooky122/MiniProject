@@ -1,14 +1,16 @@
 .proflieContainer{
-    max-width: 200px;
     border-top: 2px solid #7c7c7c;
 }
-
+.profileInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
 .tabBtn {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-
 .tabBtn button {
     border: none;
     background: none;
@@ -26,6 +28,7 @@
 .profileHeader{
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .defaultImg{
@@ -34,7 +37,7 @@
 }
 
 .profileText{
-    margin-left: 10px;
+    margin: 1em 0;
 }
 
 .name{
@@ -44,5 +47,5 @@
 .grade{
     background-color: beige;
     color: #7c7c7c;
-    margin-left: 10px;
+    margin-left: 0.5em;
 }

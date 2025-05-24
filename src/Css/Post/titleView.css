@@ -1,4 +1,9 @@
-
+.titleView{
+    margin-top: 2em;
+}
+.postTitle{
+  padding-left: 2em;
+}
 .ViewCopy{
   margin-left: auto;
   padding-top: 32px;
