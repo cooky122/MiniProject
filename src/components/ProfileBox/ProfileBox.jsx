@@ -1,5 +1,5 @@
 import UserProfile from "./UserProfile";
-import '../../Css/Profile.css';
+import '../../Css/Profile/Profile.css';
 import { useState } from "react";
 import Cafeinfo from "./Cafeinfo";
 

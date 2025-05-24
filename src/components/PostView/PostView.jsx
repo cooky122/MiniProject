@@ -3,8 +3,9 @@ import TitleView from "./TitleView";
 import CommentView from "./CommentView";
 import CreateComment from "./CreateComment";
 import PostFooter from "./PostFooter";
-import '../../Css/minProfile.css';
-import '../../Css/PostView.css'
+import '../../Css/Profile/minProfile.css';
+import '../../Css/Post/PostView.css'
+import '../../Css/Post/titleView.css'
 import '../../Css/Comment/Comment.css'
 import { useRef, useState } from "react";
 
@@ -29,7 +30,7 @@ const PostView = ({Posts, Comments}) =>{
   
 
   return(
-    <div>
+    <div className="postView">
       <div className="postWrapper">
         <TitleView posts={Posts} />
         <hr />

@@ -3,7 +3,7 @@ import DateFormat from '../DateFormat';
 
 const TitleView = ({posts}) =>{
   return(
-    <div className="postView">
+    <div className='titleView'>
         {posts.filter((post)=> post.post_id === 2)
         .map((post)=>(
           <div key={post.post_id} {...post}>
