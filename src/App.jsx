@@ -6,6 +6,11 @@ import Footer from './components/Footer';
 import Linked from './components/Linked';
 import DateFormat from './components/DateFormat';
 
+const Boards = [
+  {board_id: 1, mem_id: "user01", board_title: "공지사항", board_createdate: "2025-01-02 10:30:00" },
+  {board_id: 2, mem_id: "user01", board_title: "자유게시판", board_createdate: "2025-02-16 12:00:00" },
+];
+
 const Posts = [
   {post_id:1, board_id:1, mem_id:"user01", post_title:"사이트 오픈 공지", content:"우리 커뮤니티에 오신 것을..", create_time:<DateFormat/>, view_count:100, like_count:25, post_type:1},
   {post_id:2, board_id:2, mem_id:"user02", post_title:"오늘 뭐 먹지?", content:"점심 추천 좀 해주세요.", create_time:<DateFormat/>, view_count:45, like_count:5, post_type:0},
