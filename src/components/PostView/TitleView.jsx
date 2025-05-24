@@ -1,11 +1,10 @@
 import defaultImg from '../../assets/tmp.png'
 import DateFormat from '../DateFormat';
 
-const TitleView = ({posts}) =>{
+const TitleView = ({post}) =>{
   return(
     <div className='titleView'>
-        {posts.filter((post)=> post.post_id === 2)
-        .map((post)=>(
+        {
           <div key={post.post_id} {...post}>
             <div className='postTitle'>
               <button className='boardBtn'>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</button>
@@ -23,7 +22,7 @@ const TitleView = ({posts}) =>{
               </div>
             </div>
           </div>
-        ))
+        
         }
     </div>
   );

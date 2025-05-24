@@ -1,7 +1,9 @@
 import '../../Css/PostListAll.css'
+import DateFormat from '../DateFormat'
 import { Link } from 'react-router-dom';
 
 const EachBoardList = ({Posts})=>{
+  
   return (
   <div className="wrapPostView">
     <div className="postList">
@@ -27,9 +29,9 @@ const EachBoardList = ({Posts})=>{
           <tr key={post.post_id}>
             <td><input type="checkbox"></input></td>
             <td>{post.board_id === 1 ? "공지사항" : "자유게시판"}</td>
-            <td><Link to = {'/postview'} className="link">{post.post_title}</Link></td> 
+            <td><Link to = {`/postview/${post.post_id}` } className="link">{post.post_title}</Link></td> 
             <td>{post.mem_id}</td>
-            <td>{post.create_time}</td>
+            <td><DateFormat date={post.create_time}/></td>
             <td>{post.view_count}</td>
           </tr>
         ))}

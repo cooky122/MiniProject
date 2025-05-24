@@ -7,7 +7,6 @@ import EachBoardList from './components/postListView/EachBoardList';
 import PostView from './components/PostView/PostView';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
-import DateFormat from './components/DateFormat';
 import { Route, Routes } from 'react-router-dom';
 
 const Boards = [
@@ -42,7 +41,7 @@ function App() {
             <Route path='/' element={<PostListAll Posts={Posts}/>}></Route>
             <Route path='/1' element={<EachBoardList Posts={Posts}/>}></Route>
             <Route path='/2' element={<EachBoardList Posts={Posts}/>}></Route>
-            <Route path='/postview' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
+            <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
           </Routes>
         </div>
       </div>

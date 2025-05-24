@@ -1,8 +1,3 @@
-.postView{
-  border: 1px solid rgb(167, 167, 167);
-  border-radius: 1em;
-  margin-left: 8em;
-}
 .titleView{
   margin-top: 2em;
 }
@@ -11,6 +6,9 @@
 }
 .postContent{
   margin-top: 2em;
+}
+.con{
+  min-height: 15em;
 }
 .boardBtn{
   color: rgb(0, 180, 0);
@@ -22,7 +20,6 @@
 }
 .contentView{
   width: 100%;
-  min-height: 15em;
   text-align: left;
 }
 .contentView .con{
@@ -31,4 +28,10 @@
 .postWrapper > hr{
   margin-left: 2em;
   margin-right: 2em;
+}
+.commentHeart{
+  margin-left: 2em;
+}
+.commentHeart:hover{
+  cursor: pointer;
 }
