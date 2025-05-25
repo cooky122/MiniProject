@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 const BoardList = ()=>{
   return (
     <div className="listContainer">
-      <input type='button' name='writePost' value='카페 글쓰기'/>
+      <Link to ="/write">
+      <input type='button' name='writePage' value='카페 글쓰기'/>
+      </Link>
       <ul>
         <li><Link to ={'/1'}>공지사항</Link></li>
         <hr/>
