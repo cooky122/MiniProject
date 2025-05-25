@@ -1,21 +1,22 @@
 .commentView{
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 .createCommentBox{
   border: 2px solid rgb(167, 167, 167);
   border-radius: 8px;
   width: 80%;
-  max-width: 90%;
-  margin: 1em 4em;
+  max-width: 100%;
+  margin: 1rem 4rem;
 }
 .createComment{
   border: none;
   width: 80%;
-  min-height: 2em;
-  margin: 1em;
+  min-height: 1rem;
+  margin: 1rem 0;
+  margin-left: 1rem;
 }
 .comment{
-  margin-left: 2em;
+  margin-left: 2rem;
 }
 .submitBtn{
   width: 15%;

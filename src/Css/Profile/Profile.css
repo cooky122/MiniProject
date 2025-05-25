@@ -4,7 +4,7 @@
 .profileInfo{
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.3rem;
 }
 .tabBtn {
     display: flex;
@@ -37,7 +37,7 @@
 }
 
 .profileText{
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 
 .name{
@@ -47,5 +47,5 @@
 .grade{
     background-color: beige;
     color: #7c7c7c;
-    margin-left: 0.5em;
+    margin-left: 0.5rem;
 }

@@ -1,8 +1,8 @@
 .postContent{
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 .con{
-  min-height: 15em;
+  min-height: 15rem;
 }
 .boardBtn{
   color: rgb(0, 180, 0);
@@ -17,18 +17,18 @@
   text-align: left;
 }
 .contentView .con{
-  margin-left: 2em;
+  margin-left: 2rem;
 }
 .postWrapper > hr{
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 .postInfo{
   display: flex;
   gap: 10px;
 }
 .commentHeart{
-  margin-left: 2em;
+  margin-left: 2rem;
 }
 .commentHeart:hover{
   cursor: pointer;
