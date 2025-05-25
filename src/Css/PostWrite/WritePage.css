@@ -1,0 +1,64 @@
+.box {
+  width: 100%;
+  max-width: 36rem; /* 폼이 너무 넓어지지 않게 제한 */
+  margin: 2rem auto; /* 가운데 정렬만 유지 */
+  box-sizing: border-box;
+
+  /* 박스 스타일 없애기 */
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+.box h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.box p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.box input,
+.box select,
+.box textarea {
+  width: 100%;
+  padding: 0.625rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+}
+
+.box textarea {
+  height: 10rem;
+  resize: vertical;
+}
+
+.box button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  background-color: #03c75a;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.box button:hover {
+  background-color: #029e4b;
+}
+
+/* 부모 요소에도 스크롤 안 생기게 */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
