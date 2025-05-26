@@ -4,11 +4,6 @@ import DateFormat from '../DateFormat';
 
 const TitleView = ({post,comment}) =>{
 
-  const copyURL = (text) =>{
-      navigator.clipboard.writeText(text);
-      alert("복사 되었습니다.")
-  };
-
   return(
     <div className='titleView'>
         {
@@ -25,7 +20,7 @@ const TitleView = ({post,comment}) =>{
               </span>
               <div className='ViewCopy'>
                 <button type='button'>📑댓글 {comment?.length ?? 0}</button>
-                <button type='button' onClick={copyURL(`http://localhost:5173/postview/${post.post_id}`)}>URL 복사</button>
+                <button type='button'>URL 복사</button>
               </div>
             </div>
           </div>
