@@ -1,4 +1,9 @@
-
+.titleView{
+    margin-top: 2rem;
+}
+.postTitle{
+  padding-left: 2rem;
+}
 .ViewCopy{
   margin-left: auto;
   padding-top: 32px;
@@ -6,8 +11,8 @@
 .ViewCopy > button{
   border: none;
   background-color: white;
-  padding-right: 1em;
-  padding-bottom: 1em ;
+  padding-right: 1rem;
+  padding-bottom: 1rem ;
 }
 .ViewCopy > button:hover{
   cursor: pointer;

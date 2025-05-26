@@ -11,9 +11,11 @@ const Cafeinfo = () =>{
                 </span>
             </div>
             <hr />
-            <p>🌱씨앗 1단계</p>
-            <p>🚹멤버: 1명</p>
-            <p>📌경기도 광주시</p>
+            <div className='profileInfo'>
+                <p>🌱씨앗 1단계</p>
+                <p>🚹멤버: 1명</p>
+                <p>📌경기도 광주시</p>
+            </div>
         </div>
     );
 }

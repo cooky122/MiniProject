@@ -5,9 +5,12 @@ import Aside from './components/Aside';
 import PostListAll from './components/postListView/PostListAll';
 import EachBoardList from './components/postListView/EachBoardList';
 import PostView from './components/PostView/PostView';
+//import Main from './components/Main';
+import PostListAll from './components/postListView/PostListAll';
+import EachBoardList from './components/postListView/EachBoardList';
+import PostView from './components/PostView/PostView';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
-import WritePage from './components/PostWrite/WritePage';
 import { Route, Routes } from 'react-router-dom';
 
 const Boards = [
@@ -43,8 +46,7 @@ function App() {
             <Route path='/1' element={<EachBoardList Posts={Posts}/>}></Route>
             <Route path='/2' element={<EachBoardList Posts={Posts}/>}></Route>
             <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
-            <Route path='/write' element={<WritePage />} ></Route>
-          </Routes>  
+          </Routes>
         </div>
       </div>
       <Footer />

@@ -38,9 +38,11 @@ th,td{
 }
 
 .aside{
-	width: 200px;
-	height: 500px;
+	width: 10%;
+	height: 10%;
 	border: 1px solid #7c7c7c;
+	border-radius: 8px;
+	padding: 1rem 1rem;
 }
 
 .wrap{
@@ -50,9 +52,8 @@ th,td{
 }
 
 .main{
-	width: 800px;
-	height: 600px;
+	width: 40%;
+	height: 20%;
 	border: 1px solid #7c7c7c;
 	border-radius: 8px;
-	overflow: auto;
 }

@@ -1,14 +1,8 @@
-.titleView{
-  margin-top: 2em;
-}
-.postTitle{
-  padding-left: 2em;
-}
 .postContent{
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 .con{
-  min-height: 15em;
+  min-height: 15rem;
 }
 .boardBtn{
   color: rgb(0, 180, 0);
@@ -23,15 +17,23 @@
   text-align: left;
 }
 .contentView .con{
-  margin-left: 2em;
+  margin-left: 2rem;
 }
 .postWrapper > hr{
-  margin-left: 2em;
-  margin-right: 2em;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
-.commentHeart{
-  margin-left: 2em;
+.postInfo{
+  display: flex;
 }
-.commentHeart:hover{
-  cursor: pointer;
+.postShare{
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+.postHeart{
+  display: flex;
+  gap: 10px;
+  margin-left: 2rem;
 }
