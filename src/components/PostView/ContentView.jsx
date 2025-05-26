@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useState } from "react";
 
 const ContentView = ({post,comment}) =>{
   const [liked,setLike] = useState(false);
@@ -20,6 +21,7 @@ const ContentView = ({post,comment}) =>{
 
   return(
     <div className="contentView">
+      {
       {
         <div key={post.post_id} className="postContent">
           <div className="con">내용: {post.content}</div>
@@ -44,6 +46,7 @@ const ContentView = ({post,comment}) =>{
             </div>
           </div>
         </div>
+      }
       }
     </div>
   );

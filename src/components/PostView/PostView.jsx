@@ -9,10 +9,15 @@ import '../../Css/Post/titleView.css'
 import '../../Css/Comment/Comment.css'
 import { useRef, useState } from "react";
 import { useParams } from "react-router";
+import { useParams } from "react-router";
 
 
 
 const PostView = ({Posts, Comments}) =>{
+  const { postId } = useParams();
+
+  const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
+
   const { postId } = useParams();
 
   const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
@@ -25,12 +30,17 @@ const PostView = ({Posts, Comments}) =>{
     const newCom = {
       comment_id:idRef.current++,
       post_id:ViewPost.post_id,
+      post_id:ViewPost.post_id,
       mem_id:"user05",
       content:com,
       create_time: new Date()
     };
     setCom([newCom,...comment]);
+    setCom([newCom,...comment]);
   }
+
+  const ViewComments = comment.filter((com) => com.post_id === parseInt(postId));
+  
 
   const ViewComments = comment.filter((com) => com.post_id === parseInt(postId));
   
@@ -42,6 +52,7 @@ const PostView = ({Posts, Comments}) =>{
         <ContentView post={ViewPost} comment={ViewComments} />
       </div>
       <div className="commentWrapper">
+        <CommentView post={ViewPost} comment={ViewComments}/>
         <CommentView post={ViewPost} comment={ViewComments}/>
         <CreateComment onCreate={onCreate}/>
       </div>

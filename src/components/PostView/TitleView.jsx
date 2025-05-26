@@ -12,6 +12,7 @@ const TitleView = ({post,comment}) =>{
   return(
     <div className='titleView'>
         {
+        {
           <div key={post.post_id} {...post}>
             <div className='postTitle'>
               <Link className='boardBtn' to={post.board_id === 1 ? '/1' : '/2'}>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</Link>
