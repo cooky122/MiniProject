@@ -16,7 +16,7 @@ const CommentView = ({comment, post}) =>{
             <div className='minProfile'>
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
               <span className='profileText'>
-                <p className='userID'>{comment.mem_id} {post.mem_id === comment.mem_id ? " 작성자" : ""}</p>
+                <p className='userID'>{comment.mem_id} <span className='grade'>{post.mem_id === comment.mem_id ? " 작성자" : ""}</span></p>
                 <span className='contentView'>{comment.content}</span>
                 <p className='Date'><DateFormat date={comment.create_time}/> 
                   <span>
