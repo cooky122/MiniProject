@@ -37,7 +37,7 @@ const PostView = ({Posts, Comments}) =>{
   return(
     <div className="postView">
       <div className="postWrapper">
-        <TitleView post={ViewPost} />
+        <TitleView post={ViewPost} comment={ViewComments} />
         <hr />
         <ContentView post={ViewPost} comment={ViewComments} />
       </div>

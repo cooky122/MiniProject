@@ -4,20 +4,14 @@ import DateFormat from '../DateFormat';
 
 const CommentView = ({comment, post}) =>{
     const [liked,setLike] = useState(false);
-    const [likeCount,setCount] = useState(comment.like_count || 0);
   
     const clickHeart = () =>{
-      if(!liked){
-        setCount(count => count + 1);
-      } else {
-        setCount(count => count - 1);
-      }
       setLike(onClick => !onClick);
     }
   return(
     <div>
       {comment.map((comment) => (
-        <div className="commentView">
+        <div className="commentView" key={comment.comment_id} {...comment}>
           <div className="comment">
             <div className='minProfile'>
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
@@ -25,8 +19,11 @@ const CommentView = ({comment, post}) =>{
                 <p className='userID'>{comment.mem_id} {post.mem_id === comment.mem_id ? " 작성자" : ""}</p>
                 <span className='contentView'>{comment.content}</span>
                 <p className='Date'><DateFormat date={comment.create_time}/> 
+                  <span>
+                    답글쓰기
+                  </span>
                   <span onClick={clickHeart} className="commentHeart">
-                    {liked ? '❤️' : '🤍'} 좋아요 {likeCount}
+                    {liked ? '❤️' : '🤍'}
                   </span>
                 </p>
                 

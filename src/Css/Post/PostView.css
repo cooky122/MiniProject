@@ -25,11 +25,15 @@
 }
 .postInfo{
   display: flex;
+}
+.postShare{
+  display: flex;
   gap: 10px;
+  margin-left: auto;
+  margin-right: 2rem;
 }
-.commentHeart{
+.postHeart{
+  display: flex;
+  gap: 10px;
   margin-left: 2rem;
-}
-.commentHeart:hover{
-  cursor: pointer;
 }

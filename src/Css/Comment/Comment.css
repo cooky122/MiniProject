@@ -27,3 +27,16 @@
 .submitBtn:hover{
   cursor: pointer;
 }
+.Date{
+  display: flex;
+  gap: 10px;
+}
+.commentHeart:hover{
+  cursor: pointer;
+}
+.ShareBtn:hover{
+  cursor: pointer;
+}
+.createCommentBox > span{
+  margin-left: 1rem;
+}
