@@ -1,4 +1,4 @@
-import '../../Css/PostListAll.css'
+import '../../Css/PostList/PostListAll.css'
 import DateFormat from '../DateFormat'
 import { Link } from 'react-router-dom';
 
