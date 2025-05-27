@@ -1,0 +1,13 @@
+#list {
+	width: 800px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+
+	border: none;
+	text-align: center;
+}
+
+#list > td, th{
+	border: none;
+	padding-bottom: 10px;
+}
