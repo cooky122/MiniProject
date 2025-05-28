@@ -45,7 +45,7 @@ th,td{
 	padding: 1rem 1rem;
 }
 
-.wrap{
+.App > .wrap{
 	display: flex;
 	justify-content: center;
 	gap: 30px;

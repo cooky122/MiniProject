@@ -1,10 +1,10 @@
 import './App.css'
 import Header from './components/Header';
 import Aside from './components/Aside';
-//import Main from './components/Main';
-import PostListAll from './components/postListView/PostListAll';
-import EachBoardList from './components/postListView/EachBoardList';
+import PostListView from './components/postListView/PostListView';
 import PostView from './components/PostView/PostView';
+import WritePage from './components/PostWrite/WritePage';
+// import Main from './components/Main';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
 import { Route, Routes } from 'react-router-dom';
@@ -38,11 +38,12 @@ function App() {
         <Aside />
         <div className='main'>
           <Routes>
-            <Route path='/' element={<PostListAll Posts={Posts}/>}></Route>
-            <Route path='/1' element={<EachBoardList Posts={Posts}/>}></Route>
-            <Route path='/2' element={<EachBoardList Posts={Posts}/>}></Route>
+            <Route path='/' element={<PostListView Posts={Posts} id={0}/>}></Route>
+            <Route path='/1' element={<PostListView Posts={Posts} id={1}/>}></Route>
+            <Route path='/2' element={<PostListView Posts={Posts} id={2}/>}></Route>
             <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
-          </Routes>
+            <Route path='/write' element={<WritePage />} ></Route>
+          </Routes>  
         </div>
       </div>
       <Footer />
@@ -50,5 +51,8 @@ function App() {
     </div>
   )
 }
+
+
+
 
 export default App
