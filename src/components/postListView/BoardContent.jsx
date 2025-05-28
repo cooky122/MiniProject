@@ -2,11 +2,29 @@ import { Link } from 'react-router-dom';
 import DateFormat from '../DateFormat'
 import '../../Css/PostList/BoardContent.css'
 
-const BoardContent = ({Posts, id})=>{
+const BoardContent = ({Posts, id, duration, type, keyword})=>{
+  console.log(duration);  //year
+  console.log(type);  //title
+  console.log(keyword);
+
   if(id !== 0){
     Posts = Posts.filter((post)=>post.board_id === id)
   }
   
+  if(keyword !== ""){
+    switch (type) {
+      case "post_title":
+        Posts = Posts.filter((post)=>post.post_title.includes(keyword))
+        break;
+      case "content":
+        Posts = Posts.filter((post)=>post.content.toLowerCase().includes(keyword.toLowerCase()))
+        break;
+      case "mem_id":
+        Posts = Posts.filter((post)=>post.mem_id.toLowerCase().includes(keyword.toLowerCase()))
+        break;
+    }
+  }
+  console.log(Posts);
   return (
     <div className="BoardContent">
       <table id="list">
