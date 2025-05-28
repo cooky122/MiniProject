@@ -56,5 +56,4 @@ th,td{
 	height: 20%;
 	border: 1px solid #7c7c7c;
 	border-radius: 8px;
-	box-sizing:border-box; /*포함 시킬지 말지*/
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import DateFormat from '../DateFormat'
+import '../../Css/PostList/BoardContent.css'
 
 const BoardContent = ({Posts})=>{
   return (
