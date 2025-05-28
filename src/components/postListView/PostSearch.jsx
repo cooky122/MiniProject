@@ -1,3 +1,5 @@
+import '../../Css/PostList/PostSearch.css'
+
 const PostSearch = ()=>{
   return (
     <div className="PostSearch">
