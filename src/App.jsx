@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import PostListView from './components/postListView/PostListView';
 import PostView from './components/PostView/PostView';
+import WritePage from './components/PostWrite/WritePage';
 // import Main from './components/Main';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
@@ -41,7 +42,8 @@ function App() {
             <Route path='/1' element={<PostListView Posts={Posts} id={1}/>}></Route>
             <Route path='/2' element={<PostListView Posts={Posts} id={2}/>}></Route>
             <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
-          </Routes>
+            <Route path='/write' element={<WritePage />} ></Route>
+          </Routes>  
         </div>
       </div>
       <Footer />
