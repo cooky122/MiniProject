@@ -1,9 +1,9 @@
 import '../../Css/PostList/BoardTitle.css'
 
-const BoardTitle = ({Posts})=>{
+const BoardTitle = ({Posts, id})=>{
   return (
     <div className="BoardTitle">
-      <h2>전체글보기</h2>
+      <h2>게시판: {id}</h2>
       <div className="wrap">
         <h4>{Posts.length}개의 글</h4>
         <select name="pageNum">

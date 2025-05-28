@@ -3,8 +3,6 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 //import Main from './components/Main';
 import PostListView from './components/postListView/PostListView';
-//import PostListAll from './components/postListView/PostListAll';
-// import EachBoardList from './components/postListView/EachBoardList';
 import PostView from './components/PostView/PostView';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
@@ -39,9 +37,9 @@ function App() {
         <Aside />
         <div className='main'>
           <Routes>
-            <Route path='/' element={<PostListView Posts={Posts}/>}></Route>
-            <Route path='/1' element={<PostListView Posts={Posts}/>}></Route>
-            <Route path='/2' element={<PostListView Posts={Posts}/>}></Route>
+            <Route path='/' element={<PostListView Posts={Posts} id={0}/>}></Route>
+            <Route path='/1' element={<PostListView Posts={Posts} id={1}/>}></Route>
+            <Route path='/2' element={<PostListView Posts={Posts} id={2}/>}></Route>
             <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
           </Routes>
         </div>
