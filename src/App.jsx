@@ -1,9 +1,9 @@
 import './App.css'
 import Header from './components/Header';
 import Aside from './components/Aside';
-//import Main from './components/Main';
 import PostListView from './components/postListView/PostListView';
 import PostView from './components/PostView/PostView';
+// import Main from './components/Main';
 import Footer from './components/Footer';
 import Linked from './components/Linked';
 import { Route, Routes } from 'react-router-dom';
@@ -49,5 +49,8 @@ function App() {
     </div>
   )
 }
+
+
+
 
 export default App
