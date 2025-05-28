@@ -9,6 +9,7 @@ import '../../Css/Post/titleView.css'
 import '../../Css/Comment/Comment.css'
 import { useRef, useState } from "react";
 import { useParams } from "react-router";
+import Session from 'react-session-api';
 
 
 
@@ -29,7 +30,11 @@ const PostView = ({Posts, Comments}) =>{
       content:com,
       create_time: new Date()
     };
+
+    
     setCom([newCom,...comment]);
+
+    sessionStorage.setItem(`CommentID: ${newCom.comment_id}`,JSON.stringify(setCom()));
   }
 
   const ViewComments = comment.filter((com) => com.post_id === parseInt(postId));
