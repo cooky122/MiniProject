@@ -10,7 +10,7 @@
 }
 
 h2{
-	width: 100%;
+	max-width: 800px;
 	height: 50px;
 
 	margin-left: 20px;
@@ -18,23 +18,27 @@ h2{
 	padding-left: 20px;
 }
 
-table#postList{
-	width: 100%;
+#list {
+	width: 800px;
 	margin-left: 20px;
 	margin-bottom: 20px;
 
 	border: none;
+	text-align: center;
 }
 
-table#postList > td, th{
+#list > td, th{
 	border: none;
+	padding-bottom: 10px;
 }
 
 .searchBar{
-	width: 100%;
+	max-width: 800px;
 	border-top: 1px solid black;
-	margin-left: 20px;
-	padding: 20px;
+	margin: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .wrapInput > form{

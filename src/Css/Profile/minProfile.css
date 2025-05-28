@@ -1,0 +1,14 @@
+.minProfile{
+  display: flex;
+  gap: 10px;
+  margin: 0 1rem;
+}
+.minImg{
+  width: 32px;
+  height: 32px;
+  margin-top:1.8rem;
+  margin-right: 0.5rem;
+}
+.userID{
+  font-weight: bold;
+}

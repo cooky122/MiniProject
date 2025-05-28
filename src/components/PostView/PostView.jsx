@@ -3,14 +3,20 @@ import TitleView from "./TitleView";
 import CommentView from "./CommentView";
 import CreateComment from "./CreateComment";
 import PostFooter from "./PostFooter";
-import DateFormat from "../DateFormat";
-import '../../Css/minProfile.css';
-import '../../Css/PostView.css'
+import '../../Css/Profile/minProfile.css';
+import '../../Css/Post/PostView.css'
+import '../../Css/Post/titleView.css'
+import '../../Css/Comment/Comment.css'
 import { useRef, useState } from "react";
+import { useParams } from "react-router";
 
 
 
 const PostView = ({Posts, Comments}) =>{
+  const { postId } = useParams();
+
+  const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
+
   const[comment, setCom] = useState(Comments);
 
   const idRef = useRef(6);
@@ -18,24 +24,25 @@ const PostView = ({Posts, Comments}) =>{
   const onCreate = (com) =>{
     const newCom = {
       comment_id:idRef.current++,
-      post_id:2,
+      post_id:ViewPost.post_id,
       mem_id:"user05",
       content:com,
-      create_time: <DateFormat/>
+      create_time: new Date()
     };
-
-    setCom([newCom,...comment])
+    setCom([newCom,...comment]);
   }
-  
 
+  const ViewComments = comment.filter((com) => com.post_id === parseInt(postId));
+  
   return(
-    <div>
-      <div className="contentWrapper">
-        <TitleView posts={Posts} />
-        <ContentView posts={Posts}/>
+    <div className="postView">
+      <div className="postWrapper">
+        <TitleView post={ViewPost} comment={ViewComments} />
+        <hr />
+        <ContentView post={ViewPost} comment={ViewComments} />
       </div>
       <div className="commentWrapper">
-        <CommentView comments={Comments}/>
+        <CommentView post={ViewPost} comment={ViewComments}/>
         <CreateComment onCreate={onCreate}/>
       </div>
       <PostFooter/>

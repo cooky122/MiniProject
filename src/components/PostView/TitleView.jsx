@@ -1,28 +1,30 @@
+import { Link } from 'react-router';
 import defaultImg from '../../assets/tmp.png'
+import DateFormat from '../DateFormat';
 
-const TitleView = ({posts}) =>{
+const TitleView = ({post,comment}) =>{
+
   return(
-    <div className="postView">
-        {posts.filter((post)=> post.post_id === 2)
-        .map((post)=>(
+    <div className='titleView'>
+        {
           <div key={post.post_id} {...post}>
             <div className='postTitle'>
-              <button className='boardBtn'>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</button>
+              <Link className='boardBtn' to={post.board_id === 1 ? '/1' : '/2'}>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</Link>
               <h1>{post.post_title}</h1>
             </div>
             <div className='minProfile'>
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
               <span className='profileText'>
-                <p>{post.mem_id}</p>
-                <p>{post.create_time} 조회 {post.view_count}</p>
+                <p className='userID'>{post.mem_id}</p>
+                <p className='Date'><DateFormat date={post.create_time}/> 조회 {post.view_count}</p>
               </span>
               <div className='ViewCopy'>
-                <button type='button'>📑댓글 1</button>
+                <button type='button'>📑댓글 {comment?.length ?? 0}</button>
                 <button type='button'>URL 복사</button>
               </div>
             </div>
           </div>
-        ))
+        
         }
     </div>
   );

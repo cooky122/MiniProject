@@ -12,7 +12,7 @@ const CreateComment = ({onCreate}) =>{
 
   const onKeyDown = (event) =>{
     if(event.keyCode === 13){
-      onsubmit();
+      onSubmit();
     }
   };
 
@@ -27,9 +27,10 @@ const CreateComment = ({onCreate}) =>{
 
   return(
     <div>
-      <div>
-        <input ref={inputRef} value={com} onChange={onCreateComment} onKeyDown={onKeyDown} />
-        <button onClick={onSubmit}>등록</button>
+      <div className="createCommentBox">
+        <span>user05<br/></span>
+        <input ref={inputRef} value={com} onChange={onCreateComment} onKeyDown={onKeyDown} className="createComment" placeholder="내용을 입력해 주세요"/>
+        <button onClick={onSubmit} className="submitBtn">등록</button>
       </div>
     </div>
   );

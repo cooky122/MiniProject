@@ -1,0 +1,39 @@
+.postContent{
+  margin-top: 2rem;
+}
+.con{
+  min-height: 15rem;
+}
+.boardBtn{
+  color: rgb(0, 180, 0);
+  background-color: white;
+  border: none;
+}
+.boardBtn:hover{
+  cursor: pointer;
+}
+.contentView{
+  width: 100%;
+  text-align: left;
+}
+.contentView .con{
+  margin-left: 2rem;
+}
+.postWrapper > hr{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.postInfo{
+  display: flex;
+}
+.postShare{
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+.postHeart{
+  display: flex;
+  gap: 10px;
+  margin-left: 2rem;
+}

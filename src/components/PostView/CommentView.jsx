@@ -1,20 +1,32 @@
+import { useState } from 'react';
 import defaultImg from '../../assets/tmp.png'
+import DateFormat from '../DateFormat';
 
-const CommentView = ({comments}) =>{
+const CommentView = ({comment, post}) =>{
+    const [liked,setLike] = useState(false);
+  
+    const clickHeart = () =>{
+      setLike(onClick => !onClick);
+    }
   return(
     <div>
-      {comments.filter((comment) => comment.post_id===2)
-      .map((comment)=>(
-        <div className="commentView">
+      {comment.map((comment) => (
+        <div className="commentView" key={comment.comment_id} {...comment}>
           <div className="comment">
             <div className='minProfile'>
               <a href=""><img src={defaultImg} alt="기본 프로필" className='minImg' /></a>
               <span className='profileText'>
-                <p>{comment.mem_id}</p>
+                <p className='userID'>{comment.mem_id} {post.mem_id === comment.mem_id ? " 작성자" : ""}</p>
                 <span className='contentView'>{comment.content}</span>
-                <span className='commentFooter'>
-                  <p>{comment.create_time} </p>
-                </span>
+                <p className='Date'><DateFormat date={comment.create_time}/> 
+                  <span>
+                    답글쓰기
+                  </span>
+                  <span onClick={clickHeart} className="commentHeart">
+                    {liked ? '❤️' : '🤍'}
+                  </span>
+                </p>
+                
               </span>
             </div>
           </div>

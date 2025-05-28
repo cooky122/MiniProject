@@ -1,0 +1,14 @@
+.PostSearch{
+	max-width: 800px;
+	border-top: 1px solid black;
+	margin: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.wrapInput > form{
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
