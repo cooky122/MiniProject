@@ -18,12 +18,12 @@ const PostView = ({Posts, Comments}) =>{
   // postID를 기반으로 post분류한다
   const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
 
-  // commentID를 이용해 session에 저장한다
-  const comID = `comments:${Comments.comment_id}`;
+  // commentID를 이용해 session에 저장한다  수정: Comments 기준으로 가져올시 댓글 자료가 postId 기반이여서 제대로 저장하지 못함 주석처리수 PostId 활용
+  const comID = `comment:${postId.comment_id}`;
 
   const[comment, setCom] = useState(() => {
     //기존 useState == Comments 로 받아왔으나 session을 이용한 Comments로드로 값 변경 페이지를 불러올때 session에서 값을 받아옴 값이 없다면 이전과 동일한 Comments 배열 사용한다
-    const load = sessionStorage.getItem (comID);
+    const load = sessionStorage.getItem(comID);
     return load ? JSON.parse(load) : Comments;
   });
 
@@ -46,10 +46,17 @@ const PostView = ({Posts, Comments}) =>{
     setCom(updatedComments);
 
     sessionStorage.setItem(comID,JSON.stringify(updatedComments));
-  }
+  };
+
+    const onDelete = (targetId) =>{
+      //TODO: 기존 Comments배열의 항목 삭제 불가 && 삭제시 화면 못불러옴
+      setCom(comment.filter((comid)=> comid.comment_id !== targetId));
+      
+      sessionStorage.removeItem(comID,JSON.stringify())
+    };
 
   // post별로 분류한 comment필터 DB 기준 외래키인 post_ID 를 기반으로 comment를 받아온다
-  const ViewComments = comment.filter((com) => com.post_id === parseInt(postId));
+  const ViewComments = comment.filter((com) => com.post_id == parseInt(postId));
   
   return(
     <div className="postView">
@@ -59,7 +66,11 @@ const PostView = ({Posts, Comments}) =>{
         <ContentView post={ViewPost} comment={ViewComments} />
       </div>
       <div className="commentWrapper">
-        <CommentView post={ViewPost} comment={ViewComments}/>
+      {ViewComments.map((com) => (
+        <div key={com.comment_id}>
+          <CommentView post={ViewPost} comment={com} onDelete={onDelete}/>
+        </div>
+      ))}
         <CreateComment onCreate={onCreate}/>
       </div>
       <PostFooter/>
