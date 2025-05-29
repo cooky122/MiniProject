@@ -19,7 +19,7 @@ const PostView = ({Posts, Comments}) =>{
   const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
 
   // commentID를 이용해 session에 저장한다  수정: Comments를 매개변수로 받지만 지금당장 Comments에 영향을 주는 코드가 없다 딱하나 기본값으로 사용하지만 자유롭게 삭제가 되지않는다
-  const comID = `comment:${postId.comment_id}`;
+  let comID = `comment${postId}:${Comments.comment_id}`;
 
   const[comment, setCom] = useState(() => {
     //기존 useState == Comments 로 받아왔으나 session을 이용한 Comments로드로 값 변경 페이지를 불러올때 session에서 값을 받아옴 값이 없다면 이전과 동일한 Comments 배열 사용한다
