@@ -40,7 +40,7 @@ const PostView = ({Posts, Comments}) =>{
       like_count:0,
     };
 
-    //기존 setCom([newCom,...comment]) 형식으로 늘렸으나 JSON 변환 과정에서 실수를 방지하기위해 변수로 나누었다 즉 session에선 updatedComments comment 에 OnCreate한 Comments배열이다
+      //기존 setCom([newCom,...comment]) 형식으로 늘렸으나 JSON 변환 과정에서 실수를 방지하기위해 변수로 나누었다 즉 session에선 updatedComments comment 에 OnCreate한 Comments배열이다
     const updatedComments = [newCom,...comment];
 
     setCom(updatedComments);
@@ -48,12 +48,24 @@ const PostView = ({Posts, Comments}) =>{
     sessionStorage.setItem(comID,JSON.stringify(updatedComments));
   };
 
-    const onDelete = (targetId) =>{
-      //TODO: 기존 Comments배열의 항목 삭제 불가 && 삭제시 화면 못불러옴
-      setCom(comment.filter((comid)=> comid.comment_id !== targetId));
+  const onDelete = (targetId) =>{
+    //TODO: 기존 Comments배열의 항목 삭제 불가 && 삭제시 화면 못불러온다
+    const deleted = comment.filter((comid)=> comid.comment_id !== targetId)
+    setCom(deleted);
       
-      sessionStorage.removeItem(comID,JSON.stringify())
-    };
+    sessionStorage.setItem(comID,JSON.stringify(deleted));
+  };
+
+  const onUpdate = (targetId, newContent) => {
+    const updated = comment.map((com) =>
+      com.comment_id === targetId
+        ? { ...com, content: newContent } //원본 데이터를 그대로 두고 Content 변화한다 content : newContent
+        : com
+    );
+
+    setCom(updated);
+    sessionStorage.setItem(comID, JSON.stringify(updated));
+  };
 
   // post별로 분류한 comment필터 DB 기준 외래키인 post_ID 를 기반으로 comment를 받아온다
   const ViewComments = comment.filter((com) => com.post_id == parseInt(postId));
@@ -68,7 +80,7 @@ const PostView = ({Posts, Comments}) =>{
       <div className="commentWrapper">
       {ViewComments.map((com) => (
         <div key={com.comment_id}>
-          <CommentView post={ViewPost} comment={com} onDelete={onDelete}/>
+          <CommentView post={ViewPost} comment={com} onDelete={onDelete} onUpdate={onUpdate}/>
         </div>
       ))}
         <CreateComment onCreate={onCreate}/>
