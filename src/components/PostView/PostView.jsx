@@ -18,7 +18,7 @@ const PostView = ({Posts, Comments}) =>{
   // postID를 기반으로 post분류한다
   const ViewPost = Posts.find((post) => post.post_id === parseInt(postId));
 
-  // commentID를 이용해 session에 저장한다  수정: Comments 기준으로 가져올시 댓글 자료가 postId 기반이여서 제대로 저장하지 못함 주석처리수 PostId 활용
+  // commentID를 이용해 session에 저장한다  수정: Comments를 매개변수로 받지만 지금당장 Comments에 영향을 주는 코드가 없다 딱하나 기본값으로 사용하지만 자유롭게 삭제가 되지않는다
   const comID = `comment:${postId.comment_id}`;
 
   const[comment, setCom] = useState(() => {
@@ -49,7 +49,7 @@ const PostView = ({Posts, Comments}) =>{
   };
 
     const onDelete = (targetId) =>{
-      //TODO: 기존 Comments배열의 항목 삭제 불가 && 삭제시 화면 못불러옴
+      //TODO: 기존 Comments배열의 항목 삭제 불가 && 삭제시 화면 못불러온다
       setCom(comment.filter((comid)=> comid.comment_id !== targetId));
       
       sessionStorage.removeItem(comID,JSON.stringify())
