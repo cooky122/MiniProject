@@ -5,9 +5,10 @@ import PostSearch from './PostSearch';
 import { useState } from 'react';
 
 const PostListView = ({Posts, id})=>{
-  const [duration, setDuration] = useState("year");
-  const [type, setType] = useState("title");
-  const [inputValue, setInputValue] = useState("");
+  const [duration, setDuration] = useState("");
+  const [type, setType] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [postCount, setPostCount] = useState(0);
 
   const changeDuration = (e)=>{
     setDuration(e.target.value);
@@ -15,13 +16,18 @@ const PostListView = ({Posts, id})=>{
   const changeType = (e)=>{
     setType(e.target.value);
   }
+
+  console.log("duration: " + duration);  //year
+  console.log("type: " + type);  //title
+  console.log("검색어: "+ keyword);
+
   return(
     <div className="PostListView">
-      <BoardTitle Posts={Posts} id={id} />
-      <BoardContent Posts={Posts} id={id} duration={duration} type={type} keyword={inputValue}/>
+      <BoardTitle Posts={Posts} id={id} postCount={postCount}/>
+      <BoardContent Posts={Posts} id={id} duration={duration} type={type} keyword={keyword} setPostCount={setPostCount}/>
       <PostSearch duration={duration} type={type} 
-      searchDuration={changeDuration} searchType={changeType}
-      setKeyword={setInputValue}/>
+      changeDuration={changeDuration} changeType={changeType}
+      setKeyword={setKeyword}/>
     </div>
   );
 }

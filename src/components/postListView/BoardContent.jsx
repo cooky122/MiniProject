@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom';
 import DateFormat from '../DateFormat'
 import '../../Css/PostList/BoardContent.css'
 
-const BoardContent = ({Posts, id, duration, type, keyword})=>{
-  console.log(duration);  //year
-  console.log(type);  //title
-  console.log(keyword);
-
+const BoardContent = ({Posts, id, duration, type, keyword, setPostCount})=>{
+  console.log(duration);  //duration 사용안하면 빨간줄 생겨서 추가해놓음
+  
   if(id !== 0){
     Posts = Posts.filter((post)=>post.board_id === id)
   }
@@ -14,7 +12,7 @@ const BoardContent = ({Posts, id, duration, type, keyword})=>{
   if(keyword !== ""){
     switch (type) {
       case "post_title":
-        Posts = Posts.filter((post)=>post.post_title.includes(keyword))
+        Posts = Posts.filter((post)=>post.post_title.toLowerCase().includes(keyword.toLowerCase()))
         break;
       case "content":
         Posts = Posts.filter((post)=>post.content.toLowerCase().includes(keyword.toLowerCase()))
@@ -24,7 +22,8 @@ const BoardContent = ({Posts, id, duration, type, keyword})=>{
         break;
     }
   }
-  console.log(Posts);
+  setPostCount(Posts.length);
+
   return (
     <div className="BoardContent">
       <table id="list">

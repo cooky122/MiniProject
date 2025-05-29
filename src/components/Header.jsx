@@ -1,9 +1,9 @@
-
+import { Link } from 'react-router-dom';
 
 const Header = ()=>{
   return (
     <div className="header">
-      <h1>header 부분</h1>
+      <h1><Link to ={'/'}>MiniProject Cafe</Link></h1>
     </div>
   );
 }
