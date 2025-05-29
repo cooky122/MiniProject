@@ -1,4 +1,4 @@
-import '../../Css/listBox.css';
+import '../../Css/PostList/listBox.css';
 import { Link } from 'react-router-dom';
 
 const BoardList = ()=>{

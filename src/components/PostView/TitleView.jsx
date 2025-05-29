@@ -1,13 +1,15 @@
+import { Link } from 'react-router';
 import defaultImg from '../../assets/tmp.png'
 import DateFormat from '../DateFormat';
 
-const TitleView = ({post}) =>{
+const TitleView = ({post,comment}) =>{
+
   return(
     <div className='titleView'>
         {
-          <div key={post.post_id} {...post}>
+          <div key={post.post_id}>
             <div className='postTitle'>
-              <button className='boardBtn'>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</button>
+              <Link className='boardBtn' to={post.board_id === 1 ? '/1' : '/2'}>{post.board_id === 1 ? "공지사항 >" : "자유게시판 >"}</Link>
               <h1>{post.post_title}</h1>
             </div>
             <div className='minProfile'>
@@ -17,7 +19,7 @@ const TitleView = ({post}) =>{
                 <p className='Date'><DateFormat date={post.create_time}/> 조회 {post.view_count}</p>
               </span>
               <div className='ViewCopy'>
-                <button type='button'>📑댓글 1</button>
+                <button type='button'>📑댓글 {comment?.length ?? 0}</button>
                 <button type='button'>URL 복사</button>
               </div>
             </div>

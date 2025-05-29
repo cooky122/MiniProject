@@ -1,31 +1,42 @@
+.commentView{
+  margin-top: 1rem;
+}
 .createCommentBox{
-  display: flex;
-  width: 80%;
-  max-width: 100%;
-  margin-top: 1em;
-  margin-left: 4em;
-  margin-bottom: 1em;
   border: 2px solid rgb(167, 167, 167);
   border-radius: 8px;
+  width: 80%;
+  max-width: 100%;
+  margin: 1rem 4rem;
 }
 .createComment{
-  flex: 1;
   border: none;
-  outline: none;
   width: 80%;
-  min-height: 4em;
-  padding-left: 1em;
+  min-height: 1rem;
+  margin: 1rem 0;
+  margin-left: 1rem;
 }
 .comment{
-  margin-left: 2em;
-  min-height: 7em;
+  margin-left: 2rem;
 }
 .submitBtn{
-  width: 5%;
+  width: 15%;
   border: none;
   background-color: white;
   color: rgb(167, 167, 167);
 }
 .submitBtn:hover{
   cursor: pointer;
+}
+.Date{
+  display: flex;
+  gap: 10px;
+}
+.commentHeart:hover{
+  cursor: pointer;
+}
+.ShareBtn:hover{
+  cursor: pointer;
+}
+.createCommentBox > span{
+  margin-left: 1rem;
 }
