@@ -57,7 +57,11 @@ th,td{
 
 .main{
 	width: 40%;
-	height: 20%;
+	height: 45rem;
 	border: 1px solid #7c7c7c;
 	border-radius: 8px;
+	overflow-y: auto;
+}
+.main::-webkit-scrollbar{
+	display: none;
 }
