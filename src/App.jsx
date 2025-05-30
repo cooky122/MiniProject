@@ -14,6 +14,7 @@ const Boards = [
   {board_id: 2, mem_id: "user01", board_title: "자유게시판", board_createdate: "2025-02-16 12:00:00" },
 ];
 
+
 const Posts = [
   {post_id:1, board_id:1, mem_id:"user01", post_title:"사이트 오픈 공지", content:"우리 커뮤니티에 오신 것을..", create_time:new Date(), view_count:100, like_count:25, post_type:1},
   {post_id:2, board_id:2, mem_id:"user02", post_title:"오늘 뭐 먹지?", content:"점심 추천 좀 해주세요.", create_time:new Date(), view_count:45, like_count:5, post_type:0},
@@ -42,7 +43,7 @@ function App() {
             <Route path='/1' element={<PostListView Posts={Posts} id={1}/>}></Route>
             <Route path='/2' element={<PostListView Posts={Posts} id={2}/>}></Route>
             <Route path='/postview/:postId' element={<PostView Posts={Posts} Comments={Comments}/>}></Route>
-            <Route path='/write' element={<WritePage />} ></Route>
+            <Route path='/write' element={<WritePage Posts={Posts}/>} ></Route>
           </Routes>  
         </div>
       </div>

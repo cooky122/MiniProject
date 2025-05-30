@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../Css/PostWrite/WritePage.css';
 
-function WritePage() {
+function WritePage({Posts}) {
   const [board, setBoard] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -16,11 +16,11 @@ function WritePage() {
     }
 
     // 1. 기존에 저장된 게시글 배열 가져오기
-    let posts = JSON.parse(sessionStorage.getItem('posts')) || [];
+    // let posts = JSON.parse(sessionStorage.getItem('posts')) || [];
 
     // 2. 새 게시글 객체 만들기 (post_id는 임의로 1씩 증가시키기)
     const newPost = {
-      post_id: posts.length + 1, // 간단하게 배열 길이 + 1
+      post_id: Posts.length + 1, // 간단하게 배열 길이 + 1
       board_id: parseInt(board),  // 숫자형으로 변환
       post_title: title,
       content: content,
@@ -30,10 +30,10 @@ function WritePage() {
     };
 
     // 3. 새 게시글을 배열에 추가
-    posts.push(newPost);
+    Posts.push(newPost);
 
     // 4. 다시 세션에 저장
-    sessionStorage.setItem('posts', JSON.stringify(posts));
+    sessionStorage.setItem('Posts', JSON.stringify(Posts));
 
     alert('등록 완료!');
 
