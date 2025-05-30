@@ -5,7 +5,7 @@ const BoardList = ()=>{
   return (
     <div className="listContainer">
       <Link to ="/write">
-      <input type='button' name='writePage' value='카페 글쓰기'/>
+        <input type='button' name='writePage' value='카페 글쓰기'/>
       </Link>
       <ul>
         <li><Link to ={'/1'}>공지사항</Link></li>
