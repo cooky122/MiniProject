@@ -10,6 +10,7 @@ const PostListView = ({Posts, id})=>{
   const [keyword, setKeyword] = useState("");
   const [postCount, setPostCount] = useState(0);
 
+
   const changeDuration = (e)=>{
     setDuration(e.target.value);
   } 
