@@ -23,7 +23,7 @@ const PostView = ({Posts, Comments}) =>{
 
   const[comment, setCom] = useState(() => {
     //기존 useState == Comments 로 받아왔으나 session을 이용한 Comments로드로 값 변경 페이지를 불러올때 session에서 값을 받아옴 값이 없다면 이전과 동일한 Comments 배열 사용한다
-    const load = sessionStorage.getItem(comID);
+    const  load= sessionStorage.getItem(comID);
     return load ? JSON.parse(load) : Comments;
   });
 
