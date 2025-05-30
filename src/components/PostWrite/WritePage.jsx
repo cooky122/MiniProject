@@ -24,8 +24,8 @@ function WritePage() {
       board_id: parseInt(board),  // 숫자형으로 변환
       post_title: title,
       content: content,
-      mem_id: "user01",             // 세션 로그인 연동 없으니 임시 작성자
-      create_time: new Date().toISOString(),
+      mem_id: "user10",             // 세션 로그인 연동 없으니 임시 작성자
+      create_time: new Date(),
       view_count: 0
     };
 
