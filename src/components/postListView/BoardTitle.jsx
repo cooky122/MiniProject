@@ -1,6 +1,6 @@
 import '../../Css/PostList/BoardTitle.css'
 
-const BoardTitle = ({Posts, id})=>{
+const BoardTitle = ({id, postCount})=>{
   let boardName;
 
   switch (id) {
@@ -19,7 +19,7 @@ const BoardTitle = ({Posts, id})=>{
     <div className="BoardTitle">
       <h2>{boardName}</h2>
       <div className="wrap">
-        <h4>{Posts.length}개의 글</h4>
+        <h4>{postCount}개의 글</h4>
         <select name="pageNum">
           <option value="5">5개씩</option> 
           <option value="10">10개씩</option> 

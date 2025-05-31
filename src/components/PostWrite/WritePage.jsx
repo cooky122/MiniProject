@@ -1,37 +1,58 @@
 import React, { useState } from 'react';
-import '../../Css/PostWrite/WritePage.css'; 
+import { useNavigate } from 'react-router-dom';
+import '../../Css/PostWrite/WritePage.css';
 
-function WritePage() {
+function WritePage({Posts}) {
   const [board, setBoard] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     if (!board || !title || !content) {
       alert('모두 입력해 주세요!');
       return;
     }
 
-    console.log('게시판:', board);
-    console.log('제목:', title);
-    console.log('내용:', content);
+    // 1. 기존에 저장된 게시글 배열 가져오기
+    // let posts = JSON.parse(sessionStorage.getItem('posts')) || [];
+
+    // 2. 새 게시글 객체 만들기 (post_id는 임의로 1씩 증가시키기)
+    const newPost = {
+      post_id: Posts.length + 1, // 간단하게 배열 길이 + 1
+      board_id: parseInt(board),  // 숫자형으로 변환
+      post_title: title,
+      content: content,
+      mem_id: "user10",             // 세션 로그인 연동 없으니 임시 작성자
+      create_time: new Date(),
+      view_count: 0
+    };
+
+    // 3. 새 게시글을 배열에 추가
+    Posts.push(newPost);
+
+    // 4. 다시 세션에 저장
+    sessionStorage.setItem('Posts', JSON.stringify(Posts));
+
     alert('등록 완료!');
+
+    // 5. 해당 게시판으로 이동
+    navigate(`/${board}`);
   };
 
   return (
     <div className="box">
       <h2>카페 글쓰기</h2>
 
-      {/* 게시판 선택 라인 */}
       <div className="select-row">
         <select value={board} onChange={(e) => setBoard(e.target.value)}>
           <option value="">게시판 선택</option>
-          <option value="daily">자유게시판</option>
-          <option value="notice">공지사항</option>
+          <option value="1">공지사항</option>
+          <option value="2">자유게시판</option>
         </select>
       </div>
 
-      {/* 제목 입력 */}
       <div className="input-row">
         <input
           type="text"
@@ -41,7 +62,6 @@ function WritePage() {
         />
       </div>
 
-      {/* 내용 입력 */}
       <div className="textarea-row">
         <textarea
           placeholder="내용을 입력하세요."
