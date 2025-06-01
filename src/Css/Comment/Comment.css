@@ -49,3 +49,6 @@
   cursor: pointer;
   background-color: rgb(220, 220, 220);
 }
+.editComment{
+  border: none;
+}

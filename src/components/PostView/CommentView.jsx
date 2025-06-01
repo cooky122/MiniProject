@@ -5,19 +5,12 @@ import DateFormat from '../DateFormat';
 const CommentView = ({comment, post, onDelete, onUpdate}) =>{
   
   const [liked, setLike] = useState(false);
-  const [likeCount, setLikeCount] = useState(comment.like_count);
 
   const [edited, setEdit] = useState(false);
   const [editCon, setEditCon] = useState(comment.content)
   
   const clickHeart = () => {
-
-    const newLikeCount = liked ? likeCount - 1 : likeCount + 1;
-
-    setLikeCount(newLikeCount);
     setLike(!liked);
-
-    sessionStorage.setItem(`like:${comment.comment_id}`, JSON.stringify(newLikeCount));
   };
 
 
