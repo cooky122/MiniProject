@@ -1,7 +1,8 @@
 const Footer = ()=>{
   return(
     <div className="footer">
-      <h1>footer 부분</h1>
+      <hr />
+      <h3>MiniProject Cafe || http://localhost:5173</h3>
     </div>
   );
 }
