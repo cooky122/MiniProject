@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../Css/PostWrite/WritePage.css';
 
-function WritePage({Posts}) {
+function WritePage({ Posts, setPosts, Boards }) {
   const [board, setBoard] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -15,29 +15,24 @@ function WritePage({Posts}) {
       return;
     }
 
-    // 1. 기존에 저장된 게시글 배열 가져오기
-    // let posts = JSON.parse(sessionStorage.getItem('posts')) || [];
-
-    // 2. 새 게시글 객체 만들기 (post_id는 임의로 1씩 증가시키기)
     const newPost = {
-      post_id: Posts.length + 1, // 간단하게 배열 길이 + 1
-      board_id: parseInt(board),  // 숫자형으로 변환
+      // 기존 Posts가 있으면 마지막 post_id +1, 없으면 1부터 시작
+      post_id: Posts.length > 0 ? Posts[Posts.length -1].post_id + 1 : 1, 
+      board_id: parseInt(board),
       post_title: title,
       content: content,
-      mem_id: "user10",             // 세션 로그인 연동 없으니 임시 작성자
+      mem_id: "user10",  // 임시 작성자
       create_time: new Date(),
-      view_count: 0
+      view_count: 0,
+      like_count: 0,
+      post_type: 0
     };
 
-    // 3. 새 게시글을 배열에 추가
-    Posts.push(newPost);
-
-    // 4. 다시 세션에 저장
-    sessionStorage.setItem('Posts', JSON.stringify(Posts));
+    // 새 게시글 상태 업데이트
+    setPosts([...Posts, newPost]);
 
     alert('등록 완료!');
 
-    // 5. 해당 게시판으로 이동
     navigate(`/${board}`);
   };
 
@@ -48,8 +43,9 @@ function WritePage({Posts}) {
       <div className="select-row">
         <select value={board} onChange={(e) => setBoard(e.target.value)}>
           <option value="">게시판 선택</option>
-          <option value="1">공지사항</option>
-          <option value="2">자유게시판</option>
+          {Boards.map(b => (
+            <option key={b.board_id} value={b.board_id}>{b.board_title}</option>
+          ))}
         </select>
       </div>
 
