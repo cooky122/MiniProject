@@ -53,10 +53,9 @@ const CommentView = ({comment, post, onDelete, onUpdate}) =>{
               <p className='userID'>{comment.mem_id} <span className='grade'>{post.mem_id === comment.mem_id ? " 작성자" : ""}</span></p>
               {edited ? (<div>
                 <div className="editCommentBox">
-                  <span>{comment.mem_id}<br/></span>
                   <input value={editCon} onChange={(event) => setEditCon(event.target.value)}  className="editComment"/>
-                  <button onClick={onSave}>저장</button>
-                  <button onClick={onCancel}>취소</button>
+                  <button onClick={onSave} className='saveCancel'>저장</button>
+                  <button onClick={onCancel} className='saveCancel'>취소</button>
                 </div>
               </div>) : 
               (<span className="contentView">{comment.content}</span>)}
@@ -69,8 +68,8 @@ const CommentView = ({comment, post, onDelete, onUpdate}) =>{
                   {liked ? '❤️' : '🤍'}
                 </span>
                 <span>
-                  <button onClick={onClickUpdate}>수정</button>
-                  <button onClick={onClickDelete}>삭제</button>
+                  <button onClick={onClickUpdate} className='saveCancel'>수정</button>
+                  <button onClick={onClickDelete} className='saveCancel'>삭제</button>
                 </span>
               </p>
             </span>
