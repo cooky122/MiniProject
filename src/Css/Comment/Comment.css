@@ -40,3 +40,15 @@
 .createCommentBox > span{
   margin-left: 1rem;
 }
+.saveCancel{
+  border: none;
+  background-color: white;
+  padding: 0rem 0.5rem ;
+}
+.saveCancel:hover{
+  cursor: pointer;
+  background-color: rgb(220, 220, 220);
+}
+.editComment{
+  border: none;
+}

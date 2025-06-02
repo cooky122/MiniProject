@@ -73,7 +73,6 @@ function App() {
         </div>
       </div>
       <Footer />
-      <Linked Posts={Posts} Comments={Comments} />
     </div>
   );
 }
